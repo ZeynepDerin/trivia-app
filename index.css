@@ -1,0 +1,82 @@
+*{
+ box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#frame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  
+}
+
+#game{
+  display: flex;
+}
+
+.column-style{
+  height: 500px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card, 
+.flipped-card,
+.answered-card{
+  height: 150px;
+  width: 250px;
+  background-color: coral;
+  border: solid rgb(229, 178, 159) 1px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  
+}
+
+.card{
+  font-size: 5rem;
+  color: beige;
+}
+
+.flipped-card{
+  font-size: 0.8rem;
+  color:black;
+}
+
+.answered-card{
+  background-color:  rgb(236, 238, 210);
+}
+
+
+.true-btn,
+.false-btn {
+  border: none;
+  padding: 5px 10px;
+  width: 60px;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.true-btn{
+  background-color: rgb(122, 239, 122);
+}
+
+.false-btn{
+  background-color: red;
+}
