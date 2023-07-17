@@ -18,7 +18,7 @@ body {
   justify-content: center;
   height: 100vh;
   align-items: center;
-
+  position: relative;
 }
 
 #game{
@@ -115,11 +115,20 @@ body {
   display: flex;
 }
 
+/*
+.btn:visited
+.btn:hover
+.btn:active*/
+
+.canvases{
+ position: absolute;
+ top: 0;
+
+}
 
 
-/*#homepage-btn:visited
-#homepage-btn:hover
-#homepage-btn:active*/
+
+
 
 
 /* HOME PAGE STYLES */

@@ -27,32 +27,22 @@ const categoriesToChooseFrom = [
     {name: "Art",
     id:"25"}, 
     {name: "Animals",
-    id:"27"}, 
-    {name: "Sports",
-    id:"21"}, 
-    {name: "Science: Gadgets",
-    id:"30"}]
+    id:"27"}]
   
   
 dropLists.forEach(list => createDropLists(list))
 function createDropLists(list){
     categoriesToChooseFrom.forEach (item => {
-      const option = document.createElement("option");
-      option.value = item.id;
-      option.textContent = item.name;
-
-      dropLists.forEach(list => {
-        list.appendChild(option.cloneNode(true));
-      })
+     list.innerHTML += `
+     <option value=${item.id} name=${item.name}> ${item.name} </option>
+     `
     })
   }
   
-
 startGame.addEventListener("click", disableStartBtn)
 function disableStartBtn(e){
   e.preventDefault()
 }
-
 
 
 let filteredCategories =[]
@@ -71,17 +61,11 @@ let filteredCategories =[]
     startGame.classList.add("start-game")
     startGame.removeEventListener("click", disableStartBtn)
   
-    console.log(filteredCategories)
-   
+    localStorage.removeItem('filteredCategories')
+    localStorage.setItem('filteredCategories', JSON.stringify(filteredCategories))
   
   })
-
-
-
-
-
-
-
+ 
 
 
 
