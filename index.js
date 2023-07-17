@@ -2,7 +2,6 @@
 /* index.js
 HOME PAGE */
 
-
 const chooseCategoriesContainer = document.getElementById("choose-categories-container")
 const setYourChoice = document.getElementById("set-the-categories")
 const startGame = document.getElementById("start-game")
@@ -12,7 +11,7 @@ const categoryDroplistThree =document.getElementById("category-droplist-three")
 
 const dropLists = [categoryDroplistOne, categoryDroplistTwo, categoryDroplistThree]
 
-  const categoriesToChooseFrom = [
+const categoriesToChooseFrom = [
     {name: "General Knowledge",
     id:"9"},
     {name: "Science & Nature",
@@ -35,15 +34,19 @@ const dropLists = [categoryDroplistOne, categoryDroplistTwo, categoryDroplistThr
     id:"30"}]
   
   
+dropLists.forEach(list => createDropLists(list))
 function createDropLists(list){
     categoriesToChooseFrom.forEach (item => {
-      list.innerHTML += `
-      <option value="${item.id}" name="${item.name}"> ${item.name} </option> ` 
+      const option = document.createElement("option");
+      option.value = item.id;
+      option.textContent = item.name;
+
+      dropLists.forEach(list => {
+        list.appendChild(option.cloneNode(true));
+      })
     })
   }
   
-dropLists.forEach(list => createDropLists(list))
-
 
 startGame.addEventListener("click", disableStartBtn)
 function disableStartBtn(e){
@@ -52,7 +55,7 @@ function disableStartBtn(e){
 
 
 
-  let filteredCategories =[]
+let filteredCategories =[]
     setYourChoice.addEventListener("click", function(){  
     filteredCategories =[]
   
@@ -69,8 +72,15 @@ function disableStartBtn(e){
     startGame.removeEventListener("click", disableStartBtn)
   
     console.log(filteredCategories)
+   
   
   })
+
+
+
+
+
+
 
 
 
