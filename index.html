@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,14 +10,31 @@
 </head>
 
 <body>
-  <div id="frame" >
-    <h1 id="greeting"> Let's play!</h1>
-    <div id="game"> </div>
-    <h2 id="score"> Your Score: 0</h2>
-    <a id="newgame-btn" href=""> New Game</a>
+  <div class="frame">
+    <h1 class="greeting"> Welcome to </h1>
+
+    <h1 class="greeting game-name"> TrueQuest </h1>
+
+    <div id="game-descripton" > Test your knowledge and instincts in 
+      "Trivia Challenge: True or False Edition"! Answer nine mind-boggling true or 
+      false questions across various topics. Trust your gut and separate fact from 
+      fiction. Prove yourself as the ultimate True or False champion and let the 
+      challenge begin!</div>
+
+    <div id="choose-categories-container"> 
+      <p> Choose The Categories You Want To Play With:</p>
+      <select class="droplist-style" id="category-droplist-one"> </select>
+      <select class="droplist-style" id="category-droplist-two"> </select>
+      <select class="droplist-style" id="category-droplist-three"> </select>
+    </div>
+  
+    <button class="btn" id= "set-the-categories"> Set Your Choice </button>
+
+    <a href="gamepage/gamepage.html" class="btn start-game-disabled" id="start-game"> Start Game</a>
+
   </div>
 
-  <script src="index.js"></script>
+  <script src="index.js" type="module"></script>
 
 </body>
 

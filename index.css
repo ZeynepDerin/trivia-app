@@ -1,3 +1,5 @@
+/* index.css */
+
 *{
  box-sizing: border-box;
 }
@@ -7,16 +9,16 @@ body {
   padding: 0;
   background-color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
-
+  user-select: none;
 }
 
-#frame{
+.frame{
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
   align-items: center;
-  
+
 }
 
 #game{
@@ -25,12 +27,21 @@ body {
 }
 
 .column-style{
-  height: 500px;
-  padding: 15px;
+  height: 560px;
+  padding: 0 10px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
+}
+
+
+#genre-name{
+  margin: 0;
+  padding: 0;
+  color: rgb(197, 79, 36);
 }
 
 
@@ -53,6 +64,7 @@ body {
 .card{
   font-size: 5rem;
   color: beige;
+ 
 }
 
 .flipped-card{
@@ -85,20 +97,77 @@ body {
   background-color: red;
 }
 
-#newgame-btn{
+.btn{
   text-decoration: none;
   padding: 10px 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  background-color:darkcyan;
+  background-color: rgb(107, 50, 107);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 2em;
+  margin: 2em 3em 0 3em;
 
 }
+
+.btn-container{
+  display: flex;
+}
+
+
 
 /*#homepage-btn:visited
 #homepage-btn:hover
 #homepage-btn:active*/
+
+
+/* HOME PAGE STYLES */
+
+
+#game-descripton{
+    width: 450px;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+#choose-categories-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting{
+  text-align: center;
+}
+
+.game-name{
+  color: rgb(107, 50, 107);
+}
+
+
+.droplist-style{
+  background-color: rgb(107, 50, 107);
+  color:white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 8px 0;
+  cursor: pointer;
+
+}
+
+.droplist-style:focus{
+  outline: none;
+}
+
+.start-game-disabled{
+  opacity: 0.5;
+  padding: 10px 33px;
+  cursor: not-allowed;
+}
+
+.start-game{
+  padding: 10px 33px;
+  cursor: pointer;
+}
+
