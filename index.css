@@ -21,6 +21,7 @@ body {
 
 #game{
   display: flex;
+  cursor: default;
 }
 
 .column-style{
@@ -31,6 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 
 .card, 
 .flipped-card,
@@ -56,6 +58,8 @@ body {
 .flipped-card{
   font-size: 0.8rem;
   color:black;
+  background-color: rgb(249, 174, 146);
+  text-align: center;
 }
 
 .answered-card{
@@ -80,3 +84,21 @@ body {
 .false-btn{
   background-color: red;
 }
+
+#newgame-btn{
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color:darkcyan;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2em;
+
+}
+
+/*#homepage-btn:visited
+#homepage-btn:hover
+#homepage-btn:active*/
