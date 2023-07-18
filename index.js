@@ -30,9 +30,7 @@ const categoriesToChooseFrom = [
     {name: "History",
     id:"23"}, 
     {name: "Art",
-    id:"25"}, 
-    {name: "Animals",
-    id:"27"}]
+    id:"25"}]
   
   
 dropLists.forEach(list => createDroplists(list))
@@ -71,6 +69,7 @@ function setYourChosenCategories(){
       filteredCategories[0].id !== filteredCategories[1].id && 
       filteredCategories[0].id !== filteredCategories[2].id && 
       filteredCategories[1].id !== filteredCategories[2].id){
+      errorText.textContent = ""
       startGame.classList.remove("start-game-disabled")
       startGame.classList.add("start-game")
       startGame.removeEventListener("click", disableStartBtn)

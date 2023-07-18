@@ -5,6 +5,7 @@ GAME PAGE */
 
 const filteredCategories = JSON.parse(localStorage.getItem('filteredCategories'));
 const gameContainer = document.getElementById("game")
+const timeLeft = document.getElementById("time-left")
 let scoreEl = document.getElementById("score")
 let score = 0
 const levels = ["easy", "medium", "hard"]
@@ -59,17 +60,69 @@ const levels = ["easy", "medium", "hard"]
     this.append(btnDisplay)
     btnDisplay.append(trueButton, falseButton)
     this.classList.add("flipped-card")
+
     const allCards = Array.from(document.querySelectorAll(".card"))
     allCards.forEach(card => card.removeEventListener("click", flipTheCard))
-  
+
+    let timeCount = 10
+    timeLeft.innerHTML = `🕰️ Time Left: ${timeCount} Seconds`
+    const countDown = setInterval(()=> {
+      if(timeCount > 0){
+        timeCount--
+        timeLeft.innerHTML = `🕰️ Time Left: ${timeCount} Seconds`
+      }
+
+      if(timeCount === 0){
+        clearInterval(countDown)
+        notAnsweredCard(this) 
+        timeLeft.innerHTML = " "
+      }
+      
+    }, 1000)
+
+    trueButton.addEventListener("click", ()=> clearInterval(countDown))
+    falseButton.addEventListener("click", ()=> clearInterval(countDown))
+
+
   }
+
+  function notAnsweredCard(card){
+    while (card.firstChild) {
+      card.removeChild(card.lastChild);
+    }
+    card.classList.remove("flipped-card")
+    card.classList.remove("card")
+    card.classList.add("incorrect-answered-card")
+    const allCards = document.querySelectorAll(".card")
+    allCards.forEach(card => card.addEventListener("click", flipTheCard))
+    if(allCards.length === 0 ) { 
+      if(score >= 1500){
+        scoreEl.innerText = "Congrats! Your score is " + score + " ! 🤩"
+       
+      }else if(score >= 1000 & score < 1500){
+        
+        scoreEl.innerText = " Congrats! Your score is " + score + " ! 😁"
+  
+      }else if(score >= 500 & score < 1000){
+        
+        scoreEl.innerText = "Your score is " + score + " ! 😶"
+      } else {
+       
+        scoreEl.innerText = "Ups! Your score is " + score + " ! 😟"
+      }
+  
+    }
+    
+  }
+
+   
   
   function getAnswer(){
   
     const cardEl = this.parentElement.parentElement
     cardEl.classList.remove("flipped-card")
     cardEl.classList.remove("card")
-    /*cardEl.classList.add("answered-card")*/
+    timeLeft.innerHTML = " "
     
     if(this.innerText === cardEl.dataset.correct_answer){
       score = score + parseInt(cardEl.dataset.score)

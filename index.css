@@ -8,8 +8,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: whitesmoke;
-  font-family: Arial, Helvetica, sans-serif;
   user-select: none;
+  font-family: 'Gantari', sans-serif;
 }
 
 .frame{
@@ -19,6 +19,9 @@ body {
   height: 100vh;
   align-items: center;
   position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
   
 }
 
@@ -55,7 +58,7 @@ body {
 }
 
 .column-style{
-  height: 560px;
+  height: 450px;
   padding: 0 10px;
   padding-top: 20px;
   display: flex;
@@ -77,8 +80,8 @@ body {
 .flipped-card,
 .correct-answered-card,
 .incorrect-answered-card{
-  height: 150px;
-  width: 250px;
+  height: 125px;
+  width: 210px;
   background-color: coral;
   border: solid rgb(229, 178, 159) 1px;
   border-radius: 10px;
@@ -121,6 +124,7 @@ body {
   text-align: center;
   margin: 5px;
   cursor: pointer;
+  font-family: 'Gantari', sans-serif;
 }
 
 .true-btn{
@@ -141,12 +145,15 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 2em 3em 0 3em;
+  margin: 1rem;
+  font-family: 'Gantari', sans-serif;
 
 }
 
 .btn-container{
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -161,12 +168,24 @@ body {
   font-weight: bold;
 }
 
+#time-left{
+  margin: 0;
+  height: 1rem;
+  margin-bottom: 5px;
+}
+
+#score{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
 
 /* HOME PAGE STYLES */
 
 
 #game-descripton{
-    width: 450px;
+    width: 400px;
     text-align: center;
     margin-bottom: 3em;
 }
@@ -176,12 +195,20 @@ body {
   flex-direction: column;
 }
 
-.greeting{
-  text-align: center;
-}
 
 .game-name{
   color: rgb(107, 50, 107);
+  font-size: 3.5rem;
+  text-align: center;
+  position: relative;
+}
+.game-name::after{
+  content: "welcome";
+  opacity: 0.3;
+  position: absolute;
+  top: 40px;
+  left: 35%;
+
 }
 
 
@@ -193,6 +220,7 @@ body {
   border-radius: 5px;
   margin: 8px 0;
   cursor: pointer;
+  font-family: 'Gantari', sans-serif;
 
 }
 
@@ -211,3 +239,49 @@ body {
   cursor: pointer;
 }
 
+
+@media (max-width:414px) {
+.frame {
+  width: 375px;
+}
+
+#game-descripton{
+    width: 370px;
+}
+
+.column-style{
+   height: 390px;
+   width: 375px;
+}
+
+#game{
+  display: block;
+  overflow: auto;
+}
+
+.card, 
+.flipped-card,
+.correct-answered-card,
+.incorrect-answered-card{
+  width: 320px;
+  height: 110px;
+}
+
+.card{
+  font-size: 2rem;
+}
+
+.flipped-card{
+  font-size: 0.8rem;
+}
+
+#game-frame::after {
+  background-image: none;
+  
+}
+
+#score{
+  padding-top: 7px;
+}
+
+}
