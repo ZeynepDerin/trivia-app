@@ -69,7 +69,7 @@ const levels = ["easy", "medium", "hard"]
     const cardEl = this.parentElement.parentElement
     cardEl.classList.remove("flipped-card")
     cardEl.classList.remove("card")
-    cardEl.classList.add("answered-card")
+    /*cardEl.classList.add("answered-card")*/
     
     if(this.innerText === cardEl.dataset.correct_answer){
       score = score + parseInt(cardEl.dataset.score)
@@ -77,12 +77,13 @@ const levels = ["easy", "medium", "hard"]
       while(cardEl.firstChild){
         cardEl.removeChild(cardEl.lastChild)
       }
-      
+      cardEl.classList.add("correct-answered-card")
       
     } else {
       while (cardEl.firstChild) {
         cardEl.removeChild(cardEl.lastChild);
       }
+      cardEl.classList.add("incorrect-answered-card")
     }  
    const allCards = document.querySelectorAll(".card")
    allCards.forEach(card => card.addEventListener("click", flipTheCard))
@@ -102,8 +103,6 @@ const levels = ["easy", "medium", "hard"]
      
       scoreEl.innerText = "Ups! Your score is " + score + " ! 😟"
     }
-
-    
 
   }
     
