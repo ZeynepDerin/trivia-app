@@ -242,7 +242,7 @@ body {
 
 @media (max-width:414px) {
 .frame {
-  width: 375px;
+  width: 100%;
 }
 
 #game-descripton{
