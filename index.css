@@ -276,7 +276,7 @@ body {
   font-size: 0.95rem;
 }
 
-#game-frame::after {
+#gamepage-body::after {
   background-image: none;
   
 }
